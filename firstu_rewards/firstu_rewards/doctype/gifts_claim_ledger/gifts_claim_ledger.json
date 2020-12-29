@@ -1,0 +1,74 @@
+{
+ "creation": "2020-12-15 18:16:38.786698",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gift",
+  "trophies_paid",
+  "customer",
+  "status",
+  "message",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "gift",
+   "fieldtype": "Link",
+   "label": "Gift",
+   "options": "Gift"
+  },
+  {
+   "fetch_from": "gift.cost",
+   "fieldname": "trophies_paid",
+   "fieldtype": "Data",
+   "label": "Trophies Paid"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "default": "Claimed",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Claimed\nProcessed\nFailed"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Data",
+   "label": "Message"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  }
+ ],
+ "modified": "2020-12-23 14:17:26.059806",
+ "modified_by": "Administrator",
+ "module": "Firstu Rewards",
+ "name": "Gifts Claim Ledger",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

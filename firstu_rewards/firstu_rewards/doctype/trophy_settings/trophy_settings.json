@@ -1,0 +1,45 @@
+{
+ "creation": "2020-12-17 13:15:29.165416",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "frequency",
+  "trophies"
+ ],
+ "fields": [
+  {
+   "description": "No. of trophies / Transaction",
+   "fieldname": "trophies",
+   "fieldtype": "Data",
+   "label": "Trophies"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Data",
+   "label": "Frequency"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2020-12-18 00:15:18.330091",
+ "modified_by": "Administrator",
+ "module": "Firstu Rewards",
+ "name": "Trophy Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

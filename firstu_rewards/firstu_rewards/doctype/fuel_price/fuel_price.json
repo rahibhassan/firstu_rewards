@@ -1,0 +1,101 @@
+{
+ "creation": "2020-12-15 14:49:04.424286",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "fuel_prices_today_section",
+  "diesel",
+  "column_break_3",
+  "petrol",
+  "status_member_price_section",
+  "diesel_status",
+  "column_break_7",
+  "petrol_status",
+  "privilege_member_price_section",
+  "diesel_privilege",
+  "column_break_11",
+  "petrol_privilege"
+ ],
+ "fields": [
+  {
+   "fieldname": "fuel_prices_today_section",
+   "fieldtype": "Section Break",
+   "label": "Fuel Prices Today"
+  },
+  {
+   "fieldname": "diesel",
+   "fieldtype": "Data",
+   "label": "Diesel/L"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "petrol",
+   "fieldtype": "Data",
+   "label": "Petrol/L"
+  },
+  {
+   "fieldname": "status_member_price_section",
+   "fieldtype": "Section Break",
+   "label": "Status Member Price"
+  },
+  {
+   "fieldname": "diesel_status",
+   "fieldtype": "Data",
+   "label": "Diesel/L"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "petrol_status",
+   "fieldtype": "Data",
+   "label": "Petrol/L"
+  },
+  {
+   "fieldname": "privilege_member_price_section",
+   "fieldtype": "Section Break",
+   "label": "Privilege Member Price"
+  },
+  {
+   "fieldname": "diesel_privilege",
+   "fieldtype": "Data",
+   "label": "Diesel/L"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "petrol_privilege",
+   "fieldtype": "Data",
+   "label": "Petrol/L"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2020-12-16 00:03:10.806290",
+ "modified_by": "Administrator",
+ "module": "Firstu Rewards",
+ "name": "Fuel Price",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

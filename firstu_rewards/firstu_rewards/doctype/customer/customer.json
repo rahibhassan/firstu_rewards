@@ -1,0 +1,158 @@
+{
+ "autoname": "CUST - .#####",
+ "creation": "2020-12-15 14:41:56.404497",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "membership_type",
+  "column_break_2",
+  "phone_number",
+  "vehicle_details_section",
+  "vehicle_make",
+  "fuel_type",
+  "column_break_6",
+  "vehicle_model",
+  "registration_number",
+  "trophies_section",
+  "total_trophies_collected",
+  "column_break_13",
+  "refuel_left",
+  "cashback_section",
+  "lifetime",
+  "column_break_9",
+  "cashback_balance",
+  "click_me"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Name",
+   "search_index": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "trophies_section",
+   "fieldtype": "Section Break",
+   "label": "Trophies"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_trophies_collected",
+   "fieldtype": "Data",
+   "label": "Total Trophies Collected"
+  },
+  {
+   "fieldname": "cashback_section",
+   "fieldtype": "Section Break",
+   "label": "Cashback"
+  },
+  {
+   "default": "0",
+   "fieldname": "lifetime",
+   "fieldtype": "Data",
+   "label": "Life-time Cashback"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cashback_balance",
+   "fieldtype": "Data",
+   "label": "Cashback Balance"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "vehicle_make",
+   "fieldtype": "Data",
+   "label": "Vehicle Make"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "Vehicle Model"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Select",
+   "label": "Fuel Type",
+   "options": "\nPetrol\nDiesel\nOther"
+  },
+  {
+   "fieldname": "membership_type",
+   "fieldtype": "Select",
+   "label": "Membership Type",
+   "options": "\nStatus\nPrivilege"
+  },
+  {
+   "fieldname": "click_me",
+   "fieldtype": "Button",
+   "label": "Click Me"
+  },
+  {
+   "default": "0",
+   "description": "Total refuel left until next trophy",
+   "fieldname": "refuel_left",
+   "fieldtype": "Data",
+   "label": "Refuel Left"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "modified": "2020-12-18 00:13:51.842396",
+ "modified_by": "Administrator",
+ "module": "Firstu Rewards",
+ "name": "Customer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "customer",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include firstu_rewards *.css
+recursive-include firstu_rewards *.csv
+recursive-include firstu_rewards *.html
+recursive-include firstu_rewards *.ico
+recursive-include firstu_rewards *.js
+recursive-include firstu_rewards *.json
+recursive-include firstu_rewards *.md
+recursive-include firstu_rewards *.png
+recursive-include firstu_rewards *.py
+recursive-include firstu_rewards *.svg
+recursive-include firstu_rewards *.txt
+recursive-exclude firstu_rewards *.pyc
