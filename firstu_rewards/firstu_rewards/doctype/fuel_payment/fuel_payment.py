@@ -49,6 +49,6 @@ class FuelPayment(Document):
 		else:
 			customer_doc.refuel_left = int(customer_doc.refuel_left) - 1
 
-		customer_doc.total_fuel_paid = int(customer_doc.total_fuel_paid) - 1
+		
 		customer_doc.save()
 		cashback_doc.submit()
