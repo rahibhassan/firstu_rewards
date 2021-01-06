@@ -22,8 +22,7 @@
   "cashback_section",
   "lifetime",
   "column_break_9",
-  "cashback_balance",
-  "click_me"
+  "cashback_balance"
  ],
  "fields": [
   {
@@ -115,11 +114,6 @@
    "options": "\nStatus\nPrivilege"
   },
   {
-   "fieldname": "click_me",
-   "fieldtype": "Button",
-   "label": "Click Me"
-  },
-  {
    "default": "0",
    "description": "Total refuel left until next trophy",
    "fieldname": "refuel_left",
@@ -131,7 +125,7 @@
    "fieldtype": "Column Break"
   }
  ],
- "modified": "2020-12-18 00:13:51.842396",
+ "modified": "2021-01-06 12:37:40.092384",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",

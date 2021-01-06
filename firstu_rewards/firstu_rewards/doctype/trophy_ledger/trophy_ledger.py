@@ -13,8 +13,6 @@ class TrophyLedger(Document):
 		doc = frappe.get_doc('Customer', self.customer)
 		if self.creditdebit == "Credit":
 			doc.total_trophies_collected = int(doc.total_trophies_collected) + int(self.trophy_count)
-			# frappe.msgprint(self.)
 		elif self.creditdebit == "Debit":
 			doc.total_trophies_collected = int(doc.total_trophies_collected) - int(self.trophy_count)
-			# frappe.msgprint(doc.total_trophies_collected)
 		doc.save()
