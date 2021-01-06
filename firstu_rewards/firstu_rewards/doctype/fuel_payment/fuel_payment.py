@@ -35,7 +35,7 @@ class FuelPayment(Document):
 		self.customer_value = fuel
 		cashback = int(fuel_today) * int(litre_filled) - int(fuel) * int(litre_filled)
 		self.cashback = cashback
-		cashback_doc = frappe.get_doc({
+		self.cashback_doc = frappe.get_doc({
 			'doctype': 'Cashback Ledger',
 			'customer': self.customer,
 			'amount': cashback
@@ -51,4 +51,6 @@ class FuelPayment(Document):
 
 		
 		customer_doc.save()
-		#cashback_doc.submit()
+
+	def on_submit(self):
+		self.cashback_doc.submit()
