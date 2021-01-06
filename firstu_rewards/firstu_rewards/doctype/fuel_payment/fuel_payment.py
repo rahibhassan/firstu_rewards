@@ -51,4 +51,4 @@ class FuelPayment(Document):
 
 		
 		customer_doc.save()
-		cashback_doc.submit()
+		#cashback_doc.submit()
