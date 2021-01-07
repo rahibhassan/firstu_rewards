@@ -8,11 +8,11 @@ from frappe.model.document import Document
 
 class FuelPayment(Document):
 	def validate(self):
-		customer_doc = frappe.get_doc('Customer', self.customer)
+		self.customer_doc = frappe.get_doc('Customer', self.customer)
 		fuel_doc = frappe.get_doc('Fuel Price')
 		
-		fuel_type = customer_doc.fuel_type
-		membership_type = customer_doc.membership_type
+		fuel_type = self.customer_doc.fuel_type
+		membership_type = self.customer_doc.membership_type
 
 		if fuel_type == "Petrol":
 			fuel_today = fuel_doc.petrol
@@ -42,16 +42,17 @@ class FuelPayment(Document):
 			'fuel_payment': self.name
 		})
 		
-		trophy_doc = frappe.get_doc('Trophy Settings')
-
-		if int(customer_doc.refuel_left) == 0:
-			customer_doc.total_trophies_collected = int(customer_doc.total_trophies_collected) + int(trophy_doc.trophies)
-			customer_doc.refuel_left =  int(trophy_doc.frequency)
-		else:
-			customer_doc.refuel_left = int(customer_doc.refuel_left) - 1
-
-		
-		customer_doc.save()
 
 	def on_submit(self):
+
+		trophy_doc = frappe.get_doc('Trophy Settings')
+
+		if int(self.customer_doc.refuel_left) == 0:
+			self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) + int(trophy_doc.trophies)
+			self.customer_doc.refuel_left =  int(trophy_doc.frequency)
+		else:
+			self.customer_doc.refuel_left = int(self.customer_doc.refuel_left) - 1
+
+		
+		self.customer_doc.save()
 		self.cashback_doc.submit()

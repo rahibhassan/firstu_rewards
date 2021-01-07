@@ -8,20 +8,22 @@ from frappe.model.document import Document
 
 class GiftsClaimLedger(Document):
 	def validate(self):
-		customer_doc = frappe.get_doc('Customer', self.customer)
+		self.customer_doc = frappe.get_doc('Customer', self.customer)
 
-		if int(customer_doc.total_trophies_collected) < int(self.trophies_paid):
+		if int(self.customer_doc.total_trophies_collected) < int(self.trophies_paid):
 			self.status = "Failed"
 	
-		elif int(customer_doc.total_trophies_collected) >= int(self.trophies_paid):	
+		elif int(self.customer_doc.total_trophies_collected) >= int(self.trophies_paid):	
 			self.trophy_ledger_doc = frappe.get_doc({
 					'doctype': 'Trophy Ledger',
 					'trophy_count': self.trophies_paid,
 					'creditdebit': "Debit",
 					'customer': self.customer
 				})
+			self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) - int(self.trophies_paid)
 	def on_submit(self):
 		self.trophy_ledger_doc.submit()
+		self.customer_doc.save()
 
 		
 			
