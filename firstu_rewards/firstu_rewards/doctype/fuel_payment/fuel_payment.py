@@ -38,7 +38,8 @@ class FuelPayment(Document):
 		self.cashback_doc = frappe.get_doc({
 			'doctype': 'Cashback Ledger',
 			'customer': self.customer,
-			'amount': cashback
+			'amount': cashback,
+			'fuel_payment': self.name
 		})
 		
 		trophy_doc = frappe.get_doc('Trophy Settings')
