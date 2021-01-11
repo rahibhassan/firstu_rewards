@@ -5,6 +5,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "fuel_paid_amount",
   "amount",
   "fuel_payment",
   "customer",
@@ -49,10 +50,15 @@
    "options": "Cashback Ledger",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "fuel_paid_amount",
+   "fieldtype": "Data",
+   "label": "Fuel Paid Amount"
   }
  ],
  "is_submittable": 1,
- "modified": "2020-12-16 19:12:41.558368",
+ "modified": "2021-01-11 12:38:44.807454",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Cashback Ledger",

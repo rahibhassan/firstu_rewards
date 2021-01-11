@@ -39,7 +39,8 @@ class FuelPayment(Document):
 			'doctype': 'Cashback Ledger',
 			'customer': self.customer,
 			'amount': cashback,
-			'fuel_payment': self.name
+			'fuel_payment': self.name,
+			'fuel_paid_amount': self.amount
 		})
 		
 
