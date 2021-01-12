@@ -11,7 +11,15 @@ class GiftsClaimLedger(Document):
 		self.customer_doc = frappe.get_doc('Customer', self.customer)
 
 		if int(self.customer_doc.total_trophies_collected) < int(self.trophies_paid):
-			self.status = "Failed"
+			self.status = 'Failed'
+			self.trophy_ledger_doc = frappe.get_doc({
+					'doctype': 'Trophy Ledger',
+					'trophy_count': self.trophies_paid,
+					'creditdebit': "Debit",
+					'customer': self.customer,
+					'status': 'Failed'
+				})
+			
 	
 		elif int(self.customer_doc.total_trophies_collected) >= int(self.trophies_paid):	
 			self.trophy_ledger_doc = frappe.get_doc({
