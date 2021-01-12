@@ -35,14 +35,12 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Name",
-   "reqd": 1,
    "search_index": 1
   },
   {
    "fieldname": "phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number",
-   "reqd": 1
+   "label": "Phone Number"
   },
   {
    "fieldname": "trophies_section",
@@ -108,15 +106,13 @@
    "fieldname": "fuel_type",
    "fieldtype": "Select",
    "label": "Fuel Type",
-   "options": "\nPetrol\nDiesel\nOther",
-   "reqd": 1
+   "options": "\nPetrol\nDiesel\nOther"
   },
   {
    "fieldname": "membership_type",
    "fieldtype": "Select",
    "label": "Membership Type",
-   "options": "\nStatus\nPrivilege",
-   "reqd": 1
+   "options": "\nStatus\nPrivilege"
   },
   {
    "default": "0",
@@ -136,7 +132,7 @@
    "options": "\nWaiting\nSuccess"
   }
  ],
- "modified": "2021-01-12 11:28:09.411193",
+ "modified": "2021-01-12 16:03:27.627980",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
