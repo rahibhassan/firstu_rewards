@@ -5,6 +5,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "drupal_id",
   "status",
   "customer",
   "membership_type",
@@ -130,9 +131,14 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "\nWaiting\nSuccess"
+  },
+  {
+   "fieldname": "drupal_id",
+   "fieldtype": "Data",
+   "label": "Drupal ID"
   }
  ],
- "modified": "2021-01-12 16:03:27.627980",
+ "modified": "2021-01-13 11:35:15.138701",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
