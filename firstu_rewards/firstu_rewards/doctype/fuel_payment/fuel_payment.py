@@ -53,6 +53,15 @@ class FuelPayment(Document):
 		if int(self.customer_doc.refuel_left) == 0:
 			self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) + int(trophy_doc.trophies)
 			self.customer_doc.refuel_left =  int(trophy_doc.frequency)
+			trophy_doc = frappe.get_doc({
+				'doctype': 'Trophy Ledger',
+				'trophy_count': trophy_doc.trophies,
+				'creditdebit': "Credit",
+				'note': 'Trophy Earned from refuel',
+				'customer': self.customer,
+				'docstatus': 1
+			})
+			trophy_doc.insert()
 		else:
 			self.customer_doc.refuel_left = int(self.customer_doc.refuel_left) - 1
 

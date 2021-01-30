@@ -5,15 +5,29 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+from frappe.core.doctype.user.user import generate_keys
 
 class Customer(Document):
-	pass
-	# def validate(self):
-	# 	trophy = frappe.get_doc('Trophy Settings')
-	# 	if int(self.total_fuel_paid) == 0:
-	# 		self.total_trophies_collected = int(self.total_trophies_collected) + int(trophy.trophies)
-	# 		self.total_fuel_paid = self.total_fuel_paid 
-	# 	# if int(self.total_fuel_paid) == int(trophy.frequency):
-	# 	# 	self.total_trophies_collected = int(self.total_trophies_collected) + int(trophy.trophies)
-	# 	# 	self.total_fuel_paid = 0
+	def before_save(self):
+		if not self.user_id:
+			user_doc = frappe.get_doc({
+				'doctype': 'User',
+				'email': self.email,
+				'first_name': self.customer,
+				'send_welcome_email': 0,
+				'role_profile_name': 'FirstU Customer'
+				})
+			user_doc.insert()
+
+			self.user_id = user_doc.email
+			self.api_secret = generate_keys(self.user_id)['api_secret']
+			self.api_key = frappe.db.get_value('User', self.user_id, 'api_key')
+			frappe.db.commit()
+
+	
+			self.owner = self.user_id
+			
+	
+
+	
 
