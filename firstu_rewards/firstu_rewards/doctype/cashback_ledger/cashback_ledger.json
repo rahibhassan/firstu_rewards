@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "fuel_paid_amount",
+  "status",
   "amount",
   "fuel_payment",
   "customer",
@@ -35,7 +36,7 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "Credit\nDebit"
+   "options": "\nCredit\nDebit"
   },
   {
    "fieldname": "note",
@@ -55,10 +56,16 @@
    "fieldname": "fuel_paid_amount",
    "fieldtype": "Data",
    "label": "Fuel Paid Amount"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nSuccess\nFailed"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-01-11 12:38:44.807454",
+ "modified": "2021-02-01 16:03:30.421712",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Cashback Ledger",

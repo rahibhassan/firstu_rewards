@@ -7,12 +7,17 @@ import frappe
 from frappe.model.document import Document
 
 class CashbackLedger(Document):
-	pass
-	# def on_submit(self):
-	# 	doc = frappe.get_doc('Customer', self.customer)
-	# 	if self.type == "Credit":
-	# 		doc.cashback_balance = int(doc.cashback_balance) + int(self.amount)
-	# 		doc.lifetime = int(doc.lifetime) + int(self.amount)
-	# 	elif self.type == "Debit":
-	# 		doc.cashback_balance = int(doc.cashback_balance) - int(self.amount)
-	# 	doc.save()
+	def validate(self):
+		if self.customer:
+			cus_doc = frappe.get_doc("Customer", self.customer)
+			if int(cus_doc.cashback_balance) >= int(self.amount):
+				cus_doc.cashback_balance = int(cus_doc.cashback_balance) - int(self.amount)
+				self.note = "Cashback transferred succesfully"
+				self.status = "Success"
+				self.type = "Debit"
+				cus_doc.save()
+			else:
+				self.status = "Failed"
+				self.note = "Not enough balance"
+				
+				
