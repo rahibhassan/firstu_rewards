@@ -27,7 +27,7 @@ class GiftsClaimLedger(Document):
 					'doctype': 'Trophy Ledger',
 					'trophy_count': self.trophies_paid,
 					'creditdebit': "Debit",
-					'note': 'Gift Claimed'
+					'note': 'Gift Claimed',
 					'customer': self.customer
 				})
 			self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) - int(self.trophies_paid)
