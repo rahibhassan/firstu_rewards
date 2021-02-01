@@ -8,6 +8,7 @@
   "drupal_id",
   "status",
   "customer",
+  "last_name",
   "membership_type",
   "column_break_2",
   "phone_number",
@@ -116,10 +117,11 @@
    "options": "\nPetrol\nDiesel\nOther"
   },
   {
+   "default": "Status",
    "fieldname": "membership_type",
    "fieldtype": "Select",
    "label": "Membership Type",
-   "options": "\nStatus\nPrivilege"
+   "options": "Status\nPrivilege"
   },
   {
    "default": "0",
@@ -157,12 +159,14 @@
   {
    "fieldname": "api_key",
    "fieldtype": "Data",
-   "label": "API Key"
+   "label": "API Key",
+   "read_only": 1
   },
   {
    "fieldname": "api_secret",
    "fieldtype": "Data",
-   "label": "API Secret"
+   "label": "API Secret",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -172,10 +176,15 @@
    "options": "Customer",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
   }
  ],
- "modified": "2021-01-22 20:51:39.786096",
- "modified_by": "rifas@tridz.com",
+ "modified": "2021-02-01 10:59:22.795358",
+ "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
  "owner": "Administrator",

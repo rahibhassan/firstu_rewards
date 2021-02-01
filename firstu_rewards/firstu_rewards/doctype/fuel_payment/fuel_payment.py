@@ -40,7 +40,8 @@ class FuelPayment(Document):
 			'customer': self.customer,
 			'amount': cashback,
 			'fuel_payment': self.name,
-			'fuel_paid_amount': self.amount
+			'fuel_paid_amount': self.amount,
+			'note': 'Cashbhack received for fuel refill'
 		})
 		
 

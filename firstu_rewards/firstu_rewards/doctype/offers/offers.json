@@ -22,7 +22,7 @@
   },
   {
    "fieldname": "image",
-   "fieldtype": "Data",
+   "fieldtype": "Attach Image",
    "label": "Image"
   },
   {
@@ -32,7 +32,7 @@
    "options": "Enabled\nDisabled"
   }
  ],
- "modified": "2020-12-15 23:59:30.856589",
+ "modified": "2021-01-30 13:36:31.959661",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",

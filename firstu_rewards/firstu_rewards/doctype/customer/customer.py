@@ -9,10 +9,11 @@ from frappe.core.doctype.user.user import generate_keys
 
 class Customer(Document):
 	def before_save(self):
+		email = self.customer.lower() + "_" + self.last_name.lower() + "@" + "gmail.com"
 		if not self.user_id:
 			user_doc = frappe.get_doc({
 				'doctype': 'User',
-				'email': self.email,
+				'email': email,
 				'first_name': self.customer,
 				'send_welcome_email': 0,
 				'role_profile_name': 'FirstU Customer'
@@ -26,8 +27,3 @@ class Customer(Document):
 
 	
 			self.owner = self.user_id
-			
-	
-
-	
-
