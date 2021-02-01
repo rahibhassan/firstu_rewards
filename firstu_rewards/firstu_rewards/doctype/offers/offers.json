@@ -7,7 +7,10 @@
   "name1",
   "details",
   "image",
-  "status"
+  "status",
+  "price",
+  "offer_price",
+  "offer_content"
  ],
  "fields": [
   {
@@ -30,9 +33,24 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Enabled\nDisabled"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Data",
+   "label": "Price"
+  },
+  {
+   "fieldname": "offer_price",
+   "fieldtype": "Data",
+   "label": "Offer Price"
+  },
+  {
+   "fieldname": "offer_content",
+   "fieldtype": "Text Editor",
+   "label": "Offer Content"
   }
  ],
- "modified": "2021-01-30 13:36:31.959661",
+ "modified": "2021-02-01 13:06:03.586564",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",
