@@ -50,6 +50,7 @@ class FuelPayment(Document):
 		trophy_doc = frappe.get_doc('Trophy Settings')
 
 		self.customer_doc.cashback_balance = int(self.customer_doc.cashback_balance) + int(self.cashback)
+		self.customer_doc.lifetime = int(self.customer_doc.lifetime) + int(self.cashback)
 
 		if int(self.customer_doc.refuel_left) == 0:
 			self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) + int(trophy_doc.trophies)
