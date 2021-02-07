@@ -135,10 +135,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nWaiting\nSuccess"
+   "options": "\nPending\nApproved"
   },
   {
    "fieldname": "drupal_id",
@@ -183,7 +184,7 @@
    "label": "Last Name"
   }
  ],
- "modified": "2021-02-01 10:59:22.795358",
+ "modified": "2021-02-07 16:36:41.479390",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
