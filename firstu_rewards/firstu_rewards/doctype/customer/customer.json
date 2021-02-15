@@ -11,6 +11,7 @@
   "last_name",
   "membership_type",
   "column_break_2",
+  "contact_id",
   "phone_number",
   "user_id",
   "email",
@@ -182,9 +183,14 @@
    "fieldname": "last_name",
    "fieldtype": "Data",
    "label": "Last Name"
+  },
+  {
+   "fieldname": "contact_id",
+   "fieldtype": "Data",
+   "label": "Contact ID"
   }
  ],
- "modified": "2021-02-07 16:36:41.479390",
+ "modified": "2021-02-12 19:01:05.116762",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",

@@ -41,6 +41,7 @@ class FuelPayment(Document):
 			'amount': cashback,
 			'fuel_payment': self.name,
 			'fuel_paid_amount': self.amount,
+			'type': 'Credit',
 			'note': 'Cashbhack received for fuel refill'
 		})
 		
