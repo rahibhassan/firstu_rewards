@@ -39,10 +39,12 @@ def create_contact(customername, customermobile, upi_id, amount):
         resp = create_fund_acc(contact_id, upi_id=upi_id, amount=amount)
         return(resp)
 
+        status = resp.json()['status']
+
         cashback_doc = frappe.get_doc(
         {
             "doctype": "Cashback Ledger",
-            "status": resp.json()['status'],
+            "status": status,
             "amount": doc_amount,
             "customer": customer.name,
             "type": "Debit",
@@ -52,8 +54,8 @@ def create_contact(customername, customermobile, upi_id, amount):
     else:
         cashback_doc = frappe.get_doc(
         {
-            "doctype": "Cashback Ledger"
-            "status": resp.json()['status'],
+            "doctype": "Cashback Ledger",
+            "status": "Failed",
             "amount": doc_amount,
             "customer": customer.name,
             "type": "Debit",
