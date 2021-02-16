@@ -6,10 +6,12 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 from frappe.core.doctype.user.user import generate_keys
+import random
 
 class Customer(Document):
 	def before_save(self):
-		email = self.customer.lower()+ "_" + self.last_name.lower() + "@" + "gmail.com"
+		rand_no = random.randrange(100, 999, 1)
+		email = self.customer.lower()+ "_" + self.last_name.lower() + str(rand_no) + "@" + "gmail.com"
 		if not self.user_id:
 			user_doc = frappe.get_doc({
 				'doctype': 'User',
