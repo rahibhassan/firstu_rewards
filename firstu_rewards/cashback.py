@@ -27,7 +27,7 @@ def create_contact(customername, customermobile, upi_id, amount):
                 }
         req = requests.post(url, headers=headers , auth=auth, json=body)
 
-        contact_id = req.json()['id']
+        contact_id = req.json()['id']    
 
         customer.contact_id = contact_id
         customer.save()
@@ -37,9 +37,8 @@ def create_contact(customername, customermobile, upi_id, amount):
         customer.cashback_balance = int(customer.cashback_balance) - int(doc_amount)
         customer.save()
         resp = create_fund_acc(contact_id, upi_id=upi_id, amount=amount)
-        return(resp)
 
-        status = resp.json()['status']
+        status = resp['status']
 
         cashback_doc = frappe.get_doc(
         {
@@ -50,6 +49,8 @@ def create_contact(customername, customermobile, upi_id, amount):
             "type": "Debit",
             "note": "Cashback Redeemed"
         })
+        cashback_doc.submit()
+        return(resp)
 
     else:
         cashback_doc = frappe.get_doc(
@@ -61,6 +62,7 @@ def create_contact(customername, customermobile, upi_id, amount):
             "type": "Debit",
             "note": "Cashback Redeem Failed"
         })
+        cashback_doc.submit()
         return ("You do not have enough Cashback Balance.")
 
 @frappe.whitelist()
