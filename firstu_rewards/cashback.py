@@ -41,7 +41,7 @@ def create_contact(customername, customermobile, upi_id, amount):
 
         cashback_doc = frappe.get_doc(
         {
-            "doctype": "Cashback Ledger"
+            "doctype": "Cashback Ledger",
             "status": resp.json()['status'],
             "amount": doc_amount,
             "customer": customer.name,
