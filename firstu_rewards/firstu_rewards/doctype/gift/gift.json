@@ -5,12 +5,14 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "image",
-  "column_break_2",
   "name1",
-  "cost",
   "description",
-  "status"
+  "whats_included",
+  "column_break_2",
+  "image",
+  "cost",
+  "status",
+  "how_to_claim_it"
  ],
  "fields": [
   {
@@ -43,9 +45,19 @@
   {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whats_included",
+   "fieldtype": "Text Editor",
+   "label": "What's Included"
+  },
+  {
+   "fieldname": "how_to_claim_it",
+   "fieldtype": "Text Editor",
+   "label": "How To Claim It"
   }
  ],
- "modified": "2021-01-30 13:08:55.242774",
+ "modified": "2021-02-16 19:04:24.160661",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Gift",

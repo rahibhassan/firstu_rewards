@@ -1,22 +1,27 @@
 {
+ "autoname": "field:name1",
  "creation": "2020-12-15 15:28:05.991882",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "image",
   "name1",
   "details",
-  "image",
+  "coupon_description",
+  "coupon_code",
   "status",
   "price",
   "offer_price",
-  "offer_content"
+  "whats_included",
+  "data_10"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "unique": 1
   },
   {
    "fieldname": "details",
@@ -37,20 +42,37 @@
   {
    "fieldname": "price",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Price"
   },
   {
    "fieldname": "offer_price",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Offer Price"
   },
   {
-   "fieldname": "offer_content",
+   "fieldname": "coupon_description",
+   "fieldtype": "Data",
+   "label": "Coupon Description"
+  },
+  {
+   "fieldname": "coupon_code",
+   "fieldtype": "Data",
+   "label": "Coupon Code"
+  },
+  {
+   "fieldname": "whats_included",
    "fieldtype": "Text Editor",
-   "label": "Offer Content"
+   "label": "What's Incuded"
+  },
+  {
+   "fieldname": "data_10",
+   "fieldtype": "Text Editor",
+   "label": "How to Redeem it"
   }
  ],
- "modified": "2021-02-01 13:06:03.586564",
+ "modified": "2021-02-16 19:13:49.909789",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",
