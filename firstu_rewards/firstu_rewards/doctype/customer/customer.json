@@ -44,97 +44,115 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Name",
+   "permlevel": 1,
    "search_index": 1
   },
   {
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "label": "Phone Number",
+   "permlevel": 1,
    "unique": 1
   },
   {
    "fieldname": "trophies_section",
    "fieldtype": "Section Break",
-   "label": "Trophies"
+   "label": "Trophies",
+   "permlevel": 1
   },
   {
    "default": "0",
    "fieldname": "total_trophies_collected",
    "fieldtype": "Data",
-   "label": "Total Trophies Collected"
+   "label": "Total Trophies Collected",
+   "permlevel": 1
   },
   {
    "fieldname": "cashback_section",
    "fieldtype": "Section Break",
-   "label": "Cashback"
+   "label": "Cashback",
+   "permlevel": 1
   },
   {
    "default": "0",
    "fieldname": "lifetime",
    "fieldtype": "Data",
-   "label": "Life-time Cashback"
+   "label": "Life-time Cashback",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_9",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "permlevel": 1
   },
   {
    "default": "0",
    "fieldname": "cashback_balance",
    "fieldtype": "Data",
-   "label": "Cashback Balance"
+   "label": "Cashback Balance",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "permlevel": 1
   },
   {
    "fieldname": "vehicle_details_section",
    "fieldtype": "Section Break",
-   "label": "Vehicle Details"
+   "label": "Vehicle Details",
+   "permlevel": 1
   },
   {
    "fieldname": "vehicle_make",
    "fieldtype": "Data",
-   "label": "Vehicle Make"
+   "label": "Vehicle Make",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_6",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "permlevel": 1
   },
   {
    "fieldname": "vehicle_model",
    "fieldtype": "Data",
-   "label": "Vehicle Model"
+   "label": "Vehicle Model",
+   "permlevel": 1
   },
   {
    "fieldname": "registration_number",
    "fieldtype": "Data",
-   "label": "Registration Number"
+   "label": "Registration Number",
+   "permlevel": 1
   },
   {
    "fieldname": "fuel_type",
    "fieldtype": "Select",
    "label": "Fuel Type",
-   "options": "\nPetrol\nDiesel\nOther"
+   "options": "\nPetrol\nDiesel\nOther",
+   "permlevel": 1
   },
   {
    "default": "Status",
    "fieldname": "membership_type",
    "fieldtype": "Select",
    "label": "Membership Type",
-   "options": "Status\nPrivilege"
+   "options": "Status\nPrivilege",
+   "permlevel": 1
   },
   {
    "default": "0",
    "description": "Total refuel left until next trophy",
    "fieldname": "refuel_left",
    "fieldtype": "Data",
-   "label": "Refuel Left"
+   "label": "Refuel Left",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_13",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "permlevel": 1
   },
   {
    "default": "Pending",
@@ -146,29 +164,36 @@
   {
    "fieldname": "drupal_id",
    "fieldtype": "Data",
-   "label": "Drupal ID"
+   "label": "Drupal ID",
+   "permlevel": 1
   },
   {
    "fieldname": "user_id",
    "fieldtype": "Link",
    "label": "User ID",
-   "options": "User"
+   "options": "User",
+   "permlevel": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "permlevel": 1
   },
   {
    "fieldname": "api_key",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "API Key",
+   "permlevel": 1,
    "read_only": 1
   },
   {
    "fieldname": "api_secret",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "API Secret",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -177,21 +202,24 @@
    "label": "Amended From",
    "no_copy": 1,
    "options": "Customer",
+   "permlevel": 1,
    "print_hide": 1,
    "read_only": 1
   },
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "label": "Last Name"
+   "label": "Last Name",
+   "permlevel": 1
   },
   {
    "fieldname": "contact_id",
    "fieldtype": "Data",
-   "label": "Contact ID"
+   "label": "Contact ID",
+   "permlevel": 1
   }
  ],
- "modified": "2021-02-18 18:09:11.000895",
+ "modified": "2021-02-18 18:38:02.507813",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
