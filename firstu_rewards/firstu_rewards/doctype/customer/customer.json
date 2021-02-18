@@ -49,7 +49,8 @@
   {
    "fieldname": "phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number"
+   "label": "Phone Number",
+   "unique": 1
   },
   {
    "fieldname": "trophies_section",
@@ -190,7 +191,7 @@
    "label": "Contact ID"
   }
  ],
- "modified": "2021-02-12 19:01:05.116762",
+ "modified": "2021-02-18 18:09:11.000895",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
