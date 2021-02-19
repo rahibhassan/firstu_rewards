@@ -2,5 +2,6 @@
 *.pyc
 *.egg-info
 *.swp
+.env
 tags
 firstu_rewards/docs/current

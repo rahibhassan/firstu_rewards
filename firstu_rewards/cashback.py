@@ -1,6 +1,10 @@
 import frappe
 import requests
 from requests.auth import HTTPBasicAuth
+from decouple import config
+
+api_key = config('test_key')
+api_secret = config('test_secret')
 
 @frappe.whitelist()
 def create_contact(customername, customermobile, upi_id, amount):
@@ -19,7 +23,7 @@ def create_contact(customername, customermobile, upi_id, amount):
     else:
         headers = {"Accept": "application/json", "Content-Type": "application/json"}
         url = "https://api.razorpay.com/v1/contacts"
-        auth = HTTPBasicAuth('rzp_test_BNRLROGFnxu3NQ', 'RjCCeIapanWPIgT95oUFQeJ8')
+        auth = HTTPBasicAuth(api_key, api_secret)
         body =  {
                     "name": customername,
                     "contact": customermobile,
@@ -69,7 +73,7 @@ def create_contact(customername, customermobile, upi_id, amount):
 def create_fund_acc(contact_id, upi_id, amount):
     headers = {"Accept": "application/json", "Content-Type": "application/json"}
     url = "https://api.razorpay.com/v1/fund_accounts"
-    auth = HTTPBasicAuth('rzp_test_BNRLROGFnxu3NQ', 'RjCCeIapanWPIgT95oUFQeJ8')
+    auth = HTTPBasicAuth(api_key, api_secret)
     body =  {
                 "contact_id": contact_id,
                 "account_type": "vpa",
@@ -90,7 +94,7 @@ def create_fund_acc(contact_id, upi_id, amount):
 def create_payout(fund_id, amount):
     headers = {"Accept": "application/json", "Content-Type": "application/json"}
     url = "https://api.razorpay.com/v1/payouts"
-    auth = HTTPBasicAuth('rzp_test_BNRLROGFnxu3NQ', 'RjCCeIapanWPIgT95oUFQeJ8')
+    auth = HTTPBasicAuth(api_key, api_secret)
     body =  {
                 "account_number": "2323230011738168",
                 "fund_account_id": fund_id,
