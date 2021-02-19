@@ -47,17 +47,19 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "<ol>\n<li>List Item 1</li>\n<li>List item 2</li>\n<li>List item 3</li>\n</ol>",
    "fieldname": "whats_included",
    "fieldtype": "Text Editor",
    "label": "What's Included"
   },
   {
+   "default": "<ol>\n<li>List Item 1</li>\n<li>List item 2</li>\n<li>List item 3</li>\n</ol>",
    "fieldname": "how_to_claim_it",
    "fieldtype": "Text Editor",
    "label": "How To Claim It"
   }
  ],
- "modified": "2021-02-16 19:04:24.160661",
+ "modified": "2021-02-19 18:32:14.517230",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Gift",

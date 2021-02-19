@@ -62,19 +62,19 @@
    "label": "Coupon Code"
   },
   {
-   "default": "<h2>What's Included</h2>\n<ol>\n<li>List Item 1</li>\n<li>List item 2</li>\n<li>List item 3</li>\n</ol>",
+   "default": "<ol>\n<li>List Item 1</li>\n<li>List item 2</li>\n<li>List item 3</li>\n</ol>",
    "fieldname": "whats_included",
    "fieldtype": "Text Editor",
    "label": "What's Incuded"
   },
   {
-   "default": "<h2>How To Redeem It</h2>\n<ol>\n<li>List Item 1</li>\n<li>List item 2</li>\n<li>List item 3</li>\n</ol>",
+   "default": "<ol>\n<li>List Item 1</li>\n<li>List item 2</li>\n<li>List item 3</li>\n</ol>",
    "fieldname": "how_to_redeem",
    "fieldtype": "Text Editor",
    "label": "How to Redeem it"
   }
  ],
- "modified": "2021-02-19 17:16:30.978947",
+ "modified": "2021-02-19 18:29:47.777357",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",
