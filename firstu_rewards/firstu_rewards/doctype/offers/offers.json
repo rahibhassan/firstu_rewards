@@ -8,6 +8,7 @@
   "image",
   "name1",
   "details",
+  "list_view_details",
   "coupon_description",
   "coupon_code",
   "status",
@@ -72,9 +73,14 @@
    "fieldname": "how_to_redeem",
    "fieldtype": "Text Editor",
    "label": "How to Redeem it"
+  },
+  {
+   "fieldname": "list_view_details",
+   "fieldtype": "Data",
+   "label": "List View Details"
   }
  ],
- "modified": "2021-02-19 18:29:47.777357",
+ "modified": "2021-02-19 19:22:38.911121",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",
