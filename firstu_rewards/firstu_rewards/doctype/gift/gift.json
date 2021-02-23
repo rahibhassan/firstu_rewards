@@ -28,7 +28,7 @@
   },
   {
    "fieldname": "description",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Description"
   },
   {
@@ -61,11 +61,11 @@
   },
   {
    "fieldname": "list_view_details",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "List View Details"
   }
  ],
- "modified": "2021-02-19 19:22:57.399904",
+ "modified": "2021-02-23 10:50:01.517338",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Gift",

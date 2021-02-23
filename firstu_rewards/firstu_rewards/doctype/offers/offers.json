@@ -76,11 +76,11 @@
   },
   {
    "fieldname": "list_view_details",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "List View Details"
   }
  ],
- "modified": "2021-02-19 19:22:38.911121",
+ "modified": "2021-02-23 10:50:18.375342",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",
