@@ -51,8 +51,7 @@
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "label": "Phone Number",
-   "permlevel": 1,
-   "unique": 1
+   "permlevel": 1
   },
   {
    "fieldname": "trophies_section",
@@ -219,7 +218,7 @@
    "permlevel": 1
   }
  ],
- "modified": "2021-02-18 18:38:02.507813",
+ "modified": "2021-03-01 16:00:51.158955",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Customer",
