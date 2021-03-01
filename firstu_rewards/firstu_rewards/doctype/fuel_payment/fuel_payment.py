@@ -5,12 +5,18 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+import requests
+from requests.auth import HTTPBasicAuth
+from decouple import config
+from firstu_rewards.fuel_transaction import create_contact
+
+api_key = config('key')
+api_secret = config('secret')
 
 class FuelPayment(Document):
 	def validate(self):
 		self.customer_doc = frappe.get_doc('Customer', self.customer)
 		fuel_doc = frappe.get_doc('Fuel Price')
-		
 		fuel_type = self.customer_doc.fuel_type
 		membership_type = self.customer_doc.membership_type
 
@@ -20,8 +26,6 @@ class FuelPayment(Document):
 				fuel = fuel_doc.petrol_status
 			elif membership_type == "Privilege":
 				fuel = fuel_doc.petrol_privilege
-			
-
 		elif fuel_type == "Diesel":
 			fuel_today = fuel_doc.diesel
 			if membership_type == "Status":
@@ -44,30 +48,33 @@ class FuelPayment(Document):
 			'type': 'Credit',
 			'note': 'Cashbhack received for fuel refill'
 		})
-		
 
 	def on_submit(self):
+		if self.customer_payment_status:
+			if self.customer_payment_status == "Success":
+				create_contact("petrol_pump", self.merchant_id, self.amount)	
+				self.customer_doc.cashback_balance = int(self.customer_doc.cashback_balance) + int(self.cashback)
+				self.customer_doc.lifetime = int(self.customer_doc.lifetime) + int(self.cashback)
 
-		trophy_doc = frappe.get_doc('Trophy Settings')
+				if int(self.customer_doc.refuel_left) == 0:
+					trophy_settings = frappe.get_doc("Trophy Settings")
+					self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) + int(trophy_settings.trophies)
+					self.customer_doc.refuel_left =  int(trophy_settings.frequency)
+					trophy_doc = frappe.get_doc({
+						'doctype': 'Trophy Ledger',
+						'trophy_count': trophy_settings.trophies,
+						'creditdebit': "Credit",
+						'note': 'Trophy Earned from refuel',
+						'customer': self.customer,
+						'docstatus': 1
+					})
+					trophy_doc.insert()
+				else:
+					self.customer_doc.refuel_left = int(self.customer_doc.refuel_left) - 1
 
-		self.customer_doc.cashback_balance = int(self.customer_doc.cashback_balance) + int(self.cashback)
-		self.customer_doc.lifetime = int(self.customer_doc.lifetime) + int(self.cashback)
+				
+				self.customer_doc.save()
+				self.cashback_doc.submit()
 
-		if int(self.customer_doc.refuel_left) == 0:
-			self.customer_doc.total_trophies_collected = int(self.customer_doc.total_trophies_collected) + int(trophy_doc.trophies)
-			self.customer_doc.refuel_left =  int(trophy_doc.frequency)
-			trophy_doc = frappe.get_doc({
-				'doctype': 'Trophy Ledger',
-				'trophy_count': trophy_doc.trophies,
-				'creditdebit': "Credit",
-				'note': 'Trophy Earned from refuel',
-				'customer': self.customer,
-				'docstatus': 1
-			})
-			trophy_doc.insert()
-		else:
-			self.customer_doc.refuel_left = int(self.customer_doc.refuel_left) - 1
-
-		
-		self.customer_doc.save()
-		self.cashback_doc.submit()
+		elif self.customer_payment_status == "Failure":
+			self.status == "Failed"	

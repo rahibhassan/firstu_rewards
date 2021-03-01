@@ -5,12 +5,14 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "status",
   "customer",
   "amount",
   "litres",
   "total_amount",
   "merchant_id",
   "customer_upi",
+  "customer_payment_status",
   "location",
   "column_break_8",
   "payment_app",
@@ -25,13 +27,12 @@
    "fieldname": "amount",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Amount",
-   "reqd": 1
+   "label": "Amount"
   },
   {
    "fieldname": "merchant_id",
    "fieldtype": "Data",
-   "label": "Merchant ID"
+   "label": "Merchant UPI ID"
   },
   {
    "fieldname": "customer_upi",
@@ -48,8 +49,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Customer ",
-   "options": "Customer",
-   "reqd": 1
+   "options": "Customer"
   },
   {
    "allow_on_submit": 1,
@@ -99,10 +99,23 @@
   {
    "fieldname": "column_break_8",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_payment_status",
+   "fieldtype": "Select",
+   "label": "Customer Payment Status",
+   "options": "\nSuccess\nFailure"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPending\nSuccess\nFailed"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-01-07 16:56:41.590230",
+ "modified": "2021-02-26 15:52:28.629247",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Fuel Payment",
