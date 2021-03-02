@@ -3,6 +3,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 #from decouple import config
 from configure import api_key, api_secret
+import random
+import string
 
 #api_key = config('key')
 #api_secret = config('secret')
@@ -10,13 +12,14 @@ from configure import api_key, api_secret
 
 @frappe.whitelist()
 def create_contact(customername, upi_id, amount):
+    rand_string = ''.join(random.choices(string.ascii_lowercase, k = 7))
     amount = int(amount)
     amount = amount*100
     headers = {"Accept": "application/json", "Content-Type": "application/json"}
     url = "https://api.razorpay.com/v1/contacts"
     auth = HTTPBasicAuth(api_key, api_secret)
     body =  {
-                "name": "Hassan",
+                "name": rand_string,
                 "type": "customer"
             }
     req = requests.post(url, headers=headers , auth=auth, json=body)
