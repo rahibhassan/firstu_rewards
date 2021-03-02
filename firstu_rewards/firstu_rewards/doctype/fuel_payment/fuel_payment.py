@@ -9,12 +9,11 @@ import requests
 from requests.auth import HTTPBasicAuth
 #from decouple import config
 from firstu_rewards.fuel_transaction import create_contact
+from configure import api_key, api_secret
 
 #api_key = config('key')
 #api_secret = config('secret')
 
-api_key = "rzp_test_BNRLROGFnxu3NQ"
-api_secret = "RjCCeIapanWPIgT95oUFQeJ8"
 
 class FuelPayment(Document):
 	def validate(self):
@@ -55,7 +54,7 @@ class FuelPayment(Document):
 	def on_submit(self):
 		if self.customer_payment_status:
 			if self.customer_payment_status == "Success":
-				create_contact("petrol_pump", self.merchant_id, self.amount)	
+				self.status = create_contact("petrol_pump", self.merchant_id, self.amount)
 				self.customer_doc.cashback_balance = int(self.customer_doc.cashback_balance) + int(self.cashback)
 				self.customer_doc.lifetime = int(self.customer_doc.lifetime) + int(self.cashback)
 

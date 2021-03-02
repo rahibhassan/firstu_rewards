@@ -2,12 +2,11 @@ import frappe
 import requests
 from requests.auth import HTTPBasicAuth
 #from decouple import config
+from configure import api_key, api_secret
 
 #api_key = config('key')
 #api_secret = config('secret')
 
-api_key = "rzp_test_BNRLROGFnxu3NQ"
-api_secret = "RjCCeIapanWPIgT95oUFQeJ8"
 
 @frappe.whitelist()
 def create_contact(customername, upi_id, amount):
@@ -23,7 +22,8 @@ def create_contact(customername, upi_id, amount):
     req = requests.post(url, headers=headers , auth=auth, json=body)
     contact_id = req.json()['id']
     resp = create_fund_acc(contact_id, upi_id=upi_id, amount=amount)
-    return(resp)
+    return(resp['status'])
+    
 
 @frappe.whitelist()
 def create_fund_acc(contact_id, upi_id, amount):

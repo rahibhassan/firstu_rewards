@@ -3,5 +3,6 @@
 *.egg-info
 *.swp
 .env
+configure.py
 tags
 firstu_rewards/docs/current
