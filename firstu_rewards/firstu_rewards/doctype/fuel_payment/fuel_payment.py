@@ -7,11 +7,14 @@ import frappe
 from frappe.model.document import Document
 import requests
 from requests.auth import HTTPBasicAuth
-from decouple import config
+#from decouple import config
 from firstu_rewards.fuel_transaction import create_contact
 
-api_key = config('key')
-api_secret = config('secret')
+#api_key = config('key')
+#api_secret = config('secret')
+
+api_key = "rzp_test_BNRLROGFnxu3NQ"
+api_secret = "RjCCeIapanWPIgT95oUFQeJ8"
 
 class FuelPayment(Document):
 	def validate(self):
