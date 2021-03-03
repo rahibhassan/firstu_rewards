@@ -2,7 +2,7 @@ import frappe
 import requests
 from requests.auth import HTTPBasicAuth
 #from decouple import config
-from configure import api_key, api_secret
+from configure import api_key, api_secret, acc_number
 import random
 import string
 
@@ -53,7 +53,7 @@ def create_payout(fund_id, amount):
     url = "https://api.razorpay.com/v1/payouts"
     auth = HTTPBasicAuth(api_key, api_secret)
     body =  {
-                "account_number": "2323230011738168",
+                "account_number": acc_number,
                 "fund_account_id": fund_id,
                 "amount": amount,
                 "currency": "INR",

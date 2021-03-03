@@ -111,11 +111,11 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nPending\nSuccess\nFailed"
+   "options": "\nPending\nSuccess\nFailed\nProcessing\nProcessed\nprocessed\nprocessing\nfailed\nsuccess"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-26 15:52:28.629247",
+ "modified": "2021-03-03 11:35:40.364497",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Fuel Payment",
