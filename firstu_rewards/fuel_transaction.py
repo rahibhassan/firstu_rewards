@@ -25,7 +25,7 @@ def create_contact(customername, upi_id, amount):
     req = requests.post(url, headers=headers , auth=auth, json=body)
     contact_id = req.json()['id']
     resp = create_fund_acc(contact_id, upi_id=upi_id, amount=amount)
-    return(resp['status'])
+    return resp['status'], resp['id']
     
 
 @frappe.whitelist()

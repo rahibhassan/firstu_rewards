@@ -15,6 +15,7 @@
   "customer_payment_status",
   "location",
   "column_break_8",
+  "transaction_id",
   "payment_app",
   "market_value",
   "customer_value",
@@ -111,10 +112,15 @@
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Payment Status"
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-03-03 12:18:23.092667",
+ "modified": "2021-03-03 13:05:24.700095",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Fuel Payment",

@@ -48,7 +48,9 @@ class FuelPayment(Document):
 		
 		if self.customer_payment_status:
 			if self.customer_payment_status == "Success":
-				self.status = create_contact("petrol_pump", self.merchant_id, self.amount)
+				payout_val = create_contact("petrol_pump", self.merchant_id, self.amount)
+				self.status = payout_val[0]
+				self.transaction_id = payout_val[1]
 				if self.status == "processed" or self.status == "processing":
 					self.cashback_doc = frappe.get_doc({
 						'doctype': 'Cashback Ledger',
