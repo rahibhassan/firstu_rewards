@@ -42,7 +42,10 @@ class FuelPayment(Document):
 		cashback = int(fuel_today) * int(litre_filled) - int(fuel) * int(litre_filled)
 		self.cashback = cashback
 
-	def on_submit(self):
+		
+
+	def before_submit(self):
+		
 		if self.customer_payment_status:
 			if self.customer_payment_status == "Success":
 				self.status = create_contact("petrol_pump", self.merchant_id, self.amount)
@@ -79,6 +82,7 @@ class FuelPayment(Document):
 					self.customer_doc.save()
 					self.cashback_doc.submit()
 				elif self.customer_payment_status == "Failure":
-					self.status == "Failed"	
+					self.status = "Failed"	
 			elif self.customer_payment_status == "Failure":
-				self.status == "Failed"
+				self.status = "Failed"
+		
