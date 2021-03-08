@@ -112,6 +112,7 @@
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Read Only",
+   "in_list_view": 1,
    "label": "Payment Status"
   },
   {
@@ -121,7 +122,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2021-03-04 12:02:54.042597",
+ "modified": "2021-03-05 15:49:38.871522",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Fuel Payment",
