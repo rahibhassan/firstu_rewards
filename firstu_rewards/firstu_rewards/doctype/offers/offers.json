@@ -80,7 +80,7 @@
    "label": "List View Details"
   }
  ],
- "modified": "2021-03-04 10:59:35.794357",
+ "modified": "2021-03-08 15:57:47.580987",
  "modified_by": "Administrator",
  "module": "Firstu Rewards",
  "name": "Offers",
@@ -102,5 +102,6 @@
  "quick_entry": 1,
  "sort_field": "name1",
  "sort_order": "DESC",
+ "title_field": "name1",
  "track_changes": 1
 }
