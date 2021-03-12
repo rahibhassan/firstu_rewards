@@ -23,7 +23,7 @@ class FuelPayment(Document):
 		membership_type = self.customer_doc.membership_type
 
 		if fuel_type == "Petrol":
-			fuel_today = fuel_d9995699573oc.petrol
+			fuel_today = fuel_doc.petrol
 			if membership_type == "Status":
 				fuel = fuel_doc.petrol_status
 			elif membership_type == "Privilege":
