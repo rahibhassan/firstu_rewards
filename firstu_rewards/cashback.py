@@ -1,10 +1,11 @@
 import frappe
 import requests
 from requests.auth import HTTPBasicAuth
-from decouple import config
+#from decouple import config
+from configure import api_key, api_secret, acc_number
 
-api_key = config('key')
-api_secret = config('secret')
+# api_key = config('key')
+# api_secret = config('secret')
 
 @frappe.whitelist()
 def create_contact(customername, customermobile, upi_id, amount):
