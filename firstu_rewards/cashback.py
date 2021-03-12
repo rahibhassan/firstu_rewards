@@ -31,7 +31,6 @@ def create_contact(customername, customermobile, upi_id, amount):
                     "type": "customer",
                 }
         req = requests.post(url, headers=headers , auth=auth, json=body)
-
         contact_id = req.json()['id']    
 
         customer.contact_id = contact_id
@@ -42,7 +41,6 @@ def create_contact(customername, customermobile, upi_id, amount):
         customer.cashback_balance = int(customer.cashback_balance) - int(doc_amount)
         customer.save()
         resp = create_fund_acc(contact_id, upi_id=upi_id, amount=amount)
-
         status = resp['status']
 
         cashback_doc = frappe.get_doc(
@@ -85,7 +83,6 @@ def create_fund_acc(contact_id, upi_id, amount):
             }
 
     req = requests.post(url, headers=headers , auth=auth, json=body)
-
     fund_id = req.json()['id']
 
     resp = create_payout(fund_id, amount)
@@ -97,7 +94,7 @@ def create_payout(fund_id, amount):
     url = "https://api.razorpay.com/v1/payouts"
     auth = HTTPBasicAuth(api_key, api_secret)
     body =  {
-                "account_number": "2323230011738168",
+                "account_number": acc_number,
                 "fund_account_id": fund_id,
                 "amount": amount,
                 "currency": "INR",
